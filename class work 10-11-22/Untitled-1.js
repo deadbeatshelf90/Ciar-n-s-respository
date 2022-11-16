@@ -59,13 +59,19 @@ document.write("<pre/>");
 }else if(a==5){
     document.write("<pre>");
     let p = Number(prompt("enter dimensions"));
+    let s = p-1
     for(let q=0;q<p;q++){
-        for(let r=0;r<p;r++){
-            while(q<p-1){
-                document.write("*")
-            }
-            document.write("*");
+        if(s>0){
+            let t=s
+            while(t>0){
+            document.write(" ");
+            t=t-1
         }
+        }
+        for(let r=0;r<p;r++){
+            document.write("*")
+        }
+        s=s-1 
     document.write("<br />");
     }
     document.write("<pre/>");
