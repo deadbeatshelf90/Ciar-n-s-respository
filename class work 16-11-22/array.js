@@ -27,9 +27,9 @@ if(a==1){
             }
         }
         if(typeof(myFace[b])=="number"){
-            if(myFace[b]<e)[
+            if(myFace[b]<e){
                 e = myFace[b]
-            ]
+            }
         }
     }
     document.write(d+" is the maximum number");
@@ -77,23 +77,32 @@ if(a==1){
     document.write("<br>");
     document.write(k+" is the number of odd numbers");
 }else if(a==7){
-    let myArray= new Array();
+    let newArray= new Array();
     for(let l=0;l<myFace.length+1;l++){
-        myArray.push(myFace[l]);
+        newArray.push(myFace[l]);
     }
     document.write("<br>");
-    document.write(myArray);
+    document.write(newArray);
 }else if(a==8){
+    let newArray = new Array();
+    for(let l=0;l<myFace.length+1;l++){
+        newArray.push(myFace[l]);
+    }
     let m = prompt("which do you wish to add? String or Number");
     if(m=="String"){
-        let m = prompt("enter the string you wish to add");
+        let n = prompt("enter the string you wish to add");
+        newArray.push(n);
     }
     if(m=="Number"){
-        let m = Number(prompt("enter the number you wish to add"));
+        let o = Number(prompt("enter the number you wish to add"));
+        newArray.push(o);
     }
-    myArray.push(m);
 }else if(a==9){
-    myArray.pop();
+    let newArray = new Array();
+    for(let l=0;l<myFace.length+1;l++){
+        newArray.push(myFace[l]);
+    }
+    newArray.pop();
 }else{
     console.log("that is not a question");
 } 
