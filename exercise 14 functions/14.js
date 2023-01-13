@@ -1,5 +1,5 @@
 let a = Number(prompt("enter question number"));
-if(a==5){
+if(a==1){
     function question5(string){
         count = 0
         array1 = string.split("");
@@ -31,7 +31,7 @@ if(a==5){
     reply = question5(prompt("enter your string"));
     document.write(reply);
     document.write("<br>");
-}else if(a==6){
+}else if(a==2){
     function question6(string){
         count = 0
         array1 = string.split("");
@@ -45,8 +45,20 @@ if(a==5){
     reply = question6(prompt("enter your string"));
     document.write(reply);
     document.write("<br>");  
-}else if(a==7){
-    
+}else if(a==3){
+    function question6(string){
+        count = 0
+        array1 = string.split("");
+        for(i=0;i<array1.length;i++){
+            if(array1[i]==1||array1[i]==2||array1[i]==3||array1[i]==4||array1[i]==5||array1[i]==6||array1[i]==7||array1[i]==8||array1[i]==9||array1[i]==0){
+                count += 1
+            }   
+        }
+        return "There is "+count+" numbers in "+string
+    }
+    reply = question6(prompt("enter your string"));
+    document.write(reply);
+    document.write("<br>");      
 }else{
     document.write("not a question");
     console.log("not a question");
