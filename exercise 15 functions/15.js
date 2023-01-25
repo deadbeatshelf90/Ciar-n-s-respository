@@ -66,6 +66,52 @@ if(a==1){
     }
     reply = question2(array1);
     document.write(reply);  
+}else if(a==3){
+    array1 = []
+    b = Number(prompt("enter the number of numbers"));
+    for(i=0;i<b;i++){
+        array1.push(Number(prompt("enter the (next) number")));
+    }
+    function question3(array1){
+        let c=0
+        let d=0
+        let e=0
+        let f=0
+        for(g=0;g<array1.length;g++){
+            if(array1.length%2==0){
+                c=((array1.length)/2);
+                d=((array1.length/2)+1);
+                f=((c+d)/2);
+                return f+" is the median"
+            }else{
+                e=((array1.length-1)/2);
+                return array1[e]+" is the median"
+            }
+        }
+    }
+    reply = question3(array1)
+    document.write(reply);
+}else if(a==4){
+    array1 = []
+    b = Number(prompt("enter the number of numbers"));
+    for(i=0;i<b;i++){
+        array1.push(Number(prompt("enter the (next) number")));
+    }
+    function question3(array1){
+        let e = 0
+        let f = "<br>"
+        for(c=0;c<array1.length;c++){
+            for(d=0;d<array1.length;d++){
+                if(array1[c]==array1[d]){
+                    e = e + 1
+                }
+            }
+        f = f + (array1[c]+" apears "+e+" times"+"<br>");
+        }
+        return f
+    }
+    reply = question3(array1)
+    document.write(reply); 
 }else{
     document.write("not a question");
 }
