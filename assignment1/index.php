@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <title>assignmentl</title>
+    </head>
+    <body>
+        
+        <script>
+            function validateForm(){
+                let a = document.forms["MyForm"]["fullname"].value;
+                let b = document.forms["MyForm"]["email"].value;
+                let c = document.forms["MyForm"]["password"].value;
+                let d = document.forms["MyForm"]["gender"].value;
+                let e = document.forms["MyForm"]["address1"].value;
+                let f = document.forms["MyForm"]["address2"].value;
+                let g = document.forms["MyForm"]["city"].value;
+                let h = document.forms["MyForm"]["country"].value;
+                if((a == "")||(b == "")||(c == "")||(d == "")||(e == "")||(f == "")||(g == "")||(h == "")){
+                    return false;
+                }else{
+                    return true;
+                }
+            }
+        </script>
+        <form name="MyForm" action="upload.php"  method="post" onsubmit="return validateForm()">
+            <fieldset>
+                <label for="fullname">Full Name:</label><br>
+                    <input type="text" id="fullname" name="fullname"><br>
+                <label for="email">E-mail:</label><br>
+                    <input type="text" id="email" name="email"><br>
+                <label for="password">Password:</label><br>
+                    <input type="password" id="password" name="password"><br>
+                <label for="gender">gender</label><br>
+                    <input type="text" id="gender" name="gender"><br>
+                <label for="address1">House Number:</label><br>
+                    <input type="text" id="address1" name="address1"><br>
+                <label for="address2">Town:</label><br>
+                    <input type="text" id="address2" name="address2"><br>
+                <label for="city">City:</label><br>
+                    <input type="text" id="city" name="city"><br>
+                <label for="county">County:</label><br>
+                    <input type="text" id="county" name="county"><br>
+                <label for="submit">submit</label><br>
+                    <input type="submit" id="submit" name="submit"><br>
+            </fieldset>
+        </form> 
+    </body>
+</html>
