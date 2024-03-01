@@ -2,10 +2,15 @@ import serial
 import random
 import time
 import numpy as np
+import firebase_admin
+from firebase_admin import credentials
+
+cred = credentials.Certificate("path to key")
+firebase_admin.initialize_app(cred,'databaseURL' : '')
 
 ser = serial.Serial()
 ser.baudrate = 115200
-ser.port = "COM5"
+ser.port = "COM3"
 ser.open()
 
 ser2 = serial.Serial()
@@ -14,6 +19,7 @@ ser2.port = "COM6"
 ser2.open()
 
 stringOut = ""
+heartOut = ""
 heartrates = []
 while True:
     game_data = ser.read().decode()
@@ -26,10 +32,13 @@ while True:
     else:
         stringOut += mb_data
     
-    if len(heartrates) < 10:
-        heartrates = heartrates.push(heart_data)
-        if len(heartrates) == 10:
-            rr_intervals = np.diff(heart_rate_data)
+    if heart_data == "#":
+        if len(heartrates) < 10:
+            heartrates = heartrates.push(heartOut)
+            if len(heartrates) == 10:
+                rr_intervals = np.diff(heart_rate_data)
+    else:
+        heartOut += heart_data
 
 # Mean RR (Mean of RR intervals in milliseconds)
             mean_rr = np.mean(rr_intervals)
